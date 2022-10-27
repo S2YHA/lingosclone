@@ -1,0 +1,37 @@
+// app global css in SCSS form
+
+@media (max-width: $breakpoint-xl-min) {
+  .view-width {
+    width: 1200px;
+  }
+}
+@media (max-width: $breakpoint-lg-min) {
+  .view-width {
+    width: 980px;
+  }
+}
+@media (max-width: 1000px) {
+  .view-width {
+    width: 800px;
+  }
+}
+@media (max-width: 800px) {
+  .view-width {
+    width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .view-width {
+    width: 600px;
+  }
+}
+@media (max-width: $breakpoint-sm-min) {
+  .view-width {
+    width: 500px;
+  }
+}
+@media (max-width: $breakpoint-xs-max) {
+  .view-width {
+    width: 100%;
+  }
+}
