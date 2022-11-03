@@ -107,13 +107,34 @@
       </q-scroll-area>
     </q-drawer>
     <q-page-container>
-      <q-page></q-page>
+      <q-page class="q-mx-auto landing-page-width">
+        <div class="row">
+          <div class="col-6">
+            <img :src="landingSVG" alt="landing SVG" />
+          </div>
+          <div class="col-6 q-my-auto">
+            <h2 class="text-bold q-ma-none">
+              Szybka i skuteczna <br />
+              nauka słownictwa. <br />
+              <p class="text-secondary">Za darmo.</p>
+            </h2>
+            <h6 class="q-ma-none">
+              Wspieramy nauczycieli w angażowaniu uczniów. Wybieraj materiały,
+              obserwuj postępy, oszczędzaj czas!
+            </h6>
+            <q-btn size="lg" color="secondary" class="q-mt-lg fit"
+              >Zarejestruj się</q-btn
+            >
+          </div>
+        </div>
+      </q-page>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import { ref } from "vue";
+import landingSVG from "src/assets/landing-1.svg";
 
 export default {
   setup() {
@@ -121,7 +142,7 @@ export default {
     function toggleLeftDrawer() {
       leftDrawerOpen.value = !leftDrawerOpen.value;
     }
-    return { leftDrawerOpen, toggleLeftDrawer };
+    return { leftDrawerOpen, toggleLeftDrawer, landingSVG };
   },
 };
 </script>
