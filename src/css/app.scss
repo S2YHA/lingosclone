@@ -1,13 +1,32 @@
 // app global css in SCSS form
+.landing-page-collapsed-menu {
+  display: none;
+}
 
 @media (max-width: $breakpoint-xl-min) {
   .view-width {
+    width: 1200px;
+  }
+  .landing-page-width {
     width: 1200px;
   }
 }
 @media (max-width: $breakpoint-lg-min) {
   .view-width {
     width: 980px;
+  }
+}
+@media (max-width: 1200px) {
+  .landing-page-width {
+    width: 100%;
+  }
+}
+@media (max-width: 1103px) {
+  .landing-page-navbar-btn-wrapper {
+    display: none;
+  }
+  .landing-page-collapsed-menu {
+    display: inline-flex;
   }
 }
 @media (max-width: 1000px) {
