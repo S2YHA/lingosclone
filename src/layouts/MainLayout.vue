@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh LpR fFf">
-    <q-header bordered class="bg-primary text-white" height-hint="98">
+    <q-header bordered class="bg-secondary text-white" height-hint="98">
       <q-toolbar class="q-mx-auto view-width">
         <q-toolbar-title>
           <q-avatar>
@@ -9,8 +9,8 @@
           Lingos Clone
         </q-toolbar-title>
         <!-- <q-btn flat round dense icon="o_account_circle" class="q-mr-xs" /> -->
-        <q-btn color="primary" label="Więcej">
-          <q-menu>
+        <q-btn unelevated icon="power_settings_new" color="secondary">
+          <q-menu anchor="bottom right" self="top right">
             <q-list style="min-width: 100px">
               <q-item clickable v-close-popup>
                 <q-item-section @click="logout">Wyloguj</q-item-section>
@@ -21,7 +21,7 @@
       </q-toolbar>
 
       <q-tabs class="q-mx-auto view-width" align="left">
-        <q-route-tab to="/teacher/classes" label="Klasy" />
+        <q-route-tab to="/teacher/groups" label="Klasy" />
         <q-route-tab to="/teacher/wordsets" label="Zestawy słów" />
         <q-route-tab to="/teacher/folders" label="Foldery" />
         <q-route-tab to="/teacher/tests" label="Testy" />

@@ -4,7 +4,7 @@
       <IconTextButton class="q-mb-lg" @click="showAddDialog"
         ><q-icon name="add" />Dodaj folder</IconTextButton
       >
-      <IconTextButton class="q-mb-lg" @click="showAddDialog"
+      <IconTextButton class="q-mb-lg q-ml-md" @click="showAddDialog"
         ><q-icon name="search" />Przeglądaj gotowe</IconTextButton
       >
     </template>
@@ -14,6 +14,7 @@
     </template> -->
   </TeacherMainView>
   <AddModal
+    label="Dodaj folder"
     :isVisible="isAddDialogVisible"
     @close="isAddDialogVisible = false"
   ></AddModal>

@@ -34,7 +34,7 @@ export const useUserStore = defineStore('user', {
         return
       }
       this.user = auth.currentUser
-      this.router.push('/teacher/classes')
+      this.router.push('/teacher/groups')
     },
 
     async register(details) {
@@ -61,7 +61,7 @@ export const useUserStore = defineStore('user', {
         return
       }
       this.user = auth.currentUser
-      this.router.push('/teacher/classes')
+      this.router.push('/teacher/groups')
     },
 
     async logout() {

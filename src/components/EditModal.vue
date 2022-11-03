@@ -1,17 +1,17 @@
 <template>
-  <q-dialog :model-value="isVisible" @hide="$emit('close')">
+  <q-dialog :model-value="isVisible">
     <q-card style="min-width: 350px">
       <q-card-section>
         <div class="text-h6">Edytuj nazwę</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        <BasicInput label="Nowa nazwa" />
+        <BasicInput autofocus label="Nowa nazwa" />
       </q-card-section>
 
-      <q-card-actions align="right" class="text-primary">
-        <q-btn flat label="Zamknij" color="primary" v-close-popup />
-        <q-btn flat label="Edytuj" color="positive" v-close-popup />
+      <q-card-actions align="right" class="text-secondary">
+        <q-btn flat label="Zamknij" color="secondary" v-close-popup />
+        <q-btn flat label="Edytuj" color="secondary" v-close-popup />
       </q-card-actions>
     </q-card>
   </q-dialog>

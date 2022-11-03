@@ -1,27 +1,26 @@
 <template>
-  <TeacherMainView title="Klasy" :rows="rows" :columns="columns">
-    <template #HeaderButtons>
+  <TeacherMainView title="[Nazwa klasy]" :rows="rows" :columns="columns">
+    <!-- <template #HeaderButtons>
       <IconTextButton class="q-mb-lg" @click="showAddDialog"
         ><q-icon name="add" />Dodaj klasę</IconTextButton
       >
-    </template>
+    </template> -->
     <template #TableShortcutButtons>
-      <q-btn flat size="sm" icon="groups" label="Użytkownicy" />
+      <q-btn
+        flat
+        to="/teacher/groupView"
+        size="sm"
+        icon="groups"
+        label="Użytkownicy"
+      />
       <q-btn flat size="sm" icon="format_list_bulleted" label="Słowa" />
       <q-btn flat size="sm" icon="description" label="Raporty" />
     </template>
   </TeacherMainView>
-  <AddModal
-    :isVisible="isAddDialogVisible"
-    @close="isAddDialogVisible = false"
-  ></AddModal>
 </template>
 
 <script>
 import TeacherMainView from "src/components/TeacherMainView.vue";
-import AddModal from "src/components/AddModal.vue";
-import IconTextButton from "src/components/IconTextButton.vue";
-import { defineComponent, ref } from "vue";
 
 const columns = [
   {
@@ -58,34 +57,15 @@ const rows = [
   },
 ];
 
-export default defineComponent({
+export default {
+  name: "GroupView",
   components: {
-    AddModal,
-    IconTextButton,
     TeacherMainView,
   },
-  name: "ClassesPage",
   setup() {
-    const isAddDialogVisible = ref(false);
-
-    const showAddDialog = () => {
-      isAddDialogVisible.value = true;
-    };
-    const editRow = (row) => {
-      console.log(row);
-    };
-    const deleteRow = (row) => {
-      console.log(row);
-    };
-
-    return {
-      isAddDialogVisible,
-      rows,
-      columns,
-      showAddDialog,
-      editRow,
-      deleteRow,
-    };
+    return { columns, rows };
   },
-});
+};
 </script>
+
+<style lang="scss" scoped></style>

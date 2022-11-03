@@ -35,11 +35,11 @@
   </q-table>
   <EditModal
     :isVisible="isEditDialogVisible"
-    @close="isEditDialogVisible = false"
+    @hide="isEditDialogVisible = false"
   ></EditModal>
   <DeleteModal
     :isVisible="isDeleteDialogVisible"
-    @close="isDeleteDialogVisible = false"
+    @hide="isDeleteDialogVisible = false"
   ></DeleteModal>
 </template>
 

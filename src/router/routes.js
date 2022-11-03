@@ -14,10 +14,12 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     meta: { requiresAuth: true },
     children: [
-      { path: 'classes', component: () => import('pages/classes/ClassesPage.vue') },
+      { path: 'groups', component: () => import('pages/groups/GroupsPage.vue') },
+      { path: 'groupView', component: () => import('pages/groups/GroupView.vue') },
       { path: 'wordsets', component: () => import('pages/wordSets/WordSetsPage.vue') },
       { path: 'folders', component: () => import('pages/folders/FoldersPage.vue') },
-      { path: 'tests', component: () => import('pages/tests/TestsPage.vue') }
+      { path: 'tests', component: () => import('pages/tests/TestsPage.vue') },
+      { path: 'tests/add', component: () => import('pages/tests/AddNewTest.vue') }
     ]
   },
 

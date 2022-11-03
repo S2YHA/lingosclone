@@ -1,5 +1,5 @@
 <template>
-  <q-input dense outlined bg-color="white" :label="label" />
+  <q-input dense outlined color="secondary" bg-color="white" :label="label" />
 </template>
 
 <script>

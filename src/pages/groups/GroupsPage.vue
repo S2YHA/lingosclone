@@ -1,15 +1,32 @@
 <template>
-  <TeacherMainView title="Testy" :rows="rows" :columns="columns">
+  <TeacherMainView title="Klasy" :rows="rows" :columns="columns">
     <template #HeaderButtons>
-      <IconTextButton class="q-mb-lg" to="tests/add" @click="showAddDialog"
-        ><q-icon name="add" />Dodaj test</IconTextButton
+      <IconTextButton class="q-mb-lg" @click="showAddDialog"
+        ><q-icon name="add" />Dodaj klasę</IconTextButton
       >
     </template>
+    <template #TableShortcutButtons>
+      <q-btn
+        flat
+        to="/teacher/groupView"
+        size="sm"
+        icon="groups"
+        label="Użytkownicy"
+      />
+      <q-btn flat size="sm" icon="format_list_bulleted" label="Słowa" />
+      <q-btn flat size="sm" icon="description" label="Raporty" />
+    </template>
   </TeacherMainView>
+  <AddModal
+    label="Dodaj klasę"
+    :isVisible="isAddDialogVisible"
+    @close="isAddDialogVisible = false"
+  ></AddModal>
 </template>
 
 <script>
 import TeacherMainView from "src/components/TeacherMainView.vue";
+import AddModal from "src/components/AddModal.vue";
 import IconTextButton from "src/components/IconTextButton.vue";
 import { defineComponent, ref } from "vue";
 
@@ -22,6 +39,12 @@ const columns = [
     field: (row) => row.name,
     format: (val) => `${val}`,
     sortable: true,
+  },
+  {
+    name: "shortcut",
+    align: "center",
+    label: "Skróty",
+    field: "shortcut",
   },
   {
     name: "action",
@@ -43,11 +66,12 @@ const rows = [
 ];
 
 export default defineComponent({
+  name: "GroupsPage",
   components: {
+    AddModal,
     IconTextButton,
     TeacherMainView,
   },
-  name: "TestsPage",
   setup() {
     const isAddDialogVisible = ref(false);
 
